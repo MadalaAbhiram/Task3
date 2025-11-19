@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Event Registration</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Task 3 — Clean form with JS validation, per-field errors, success toast -->
+  </head>
+  <body>
+    <header class="page-header">
+      <h1>Event Registration</h1>
+      <p class="sub">Please fill all <span class="req">*</span> mandatory fields.</p>
+    </header>
+
+    <main class="container">
+      <!-- novalidate so JS controls validation -->
+        <form id="regForm">
+          <h3>Event Registration Form</h3>
+
+          <label>Name: <input type="text" id="name"></label>
+          <span id="err-name" class="error"></span><br>
+
+          <label>Email: <input type="email" id="email"></label>
+          <span id="err-email" class="error"></span><br>
+
+          <label>Phone: <input type="text" id="phone"></label>
+          <span id="err-phone" class="error"></span><br>
+
+          <label>Event Type:
+            <select id="type">
+              <option value="">-- Select Type --</option>
+              <option value="Workshop">Workshop</option>
+              <option value="Seminar">Seminar</option>
+              <option value="Conference">Conference</option>
+            </select>
+          </label>
+          <span id="err-type" class="error"></span><br>
+
+          <fieldset>
+            <legend>Mode of Attendance:</legend>
+            <label>
+              <input type="radio" name="mode" value="Online"> Online
+            </label>
+
+            <label>
+              <input type="radio" name="mode" value="Offline"> Offline
+            </label>
+            <span id="err-mode" class="error"></span>
+          </fieldset>
+
+          <br>
+
+          <label>Date: <input type="date" id="date"></label>
+          <span id="err-date" class="error"></span><br>
+
+          <label>Seats: <input type="number" id="seats" min="1" max="5"></label>
+          <span id="err-seats" class="error"></span><br>
+
+          <label><input type="checkbox" id="terms"> I agree to terms</label>
+          <span id="err-terms" class="error"></span><br><br>
+
+          <button type="submit">Submit</button>
+          <button type="reset">Reset</button>
+        </form>
+
+      <p id="toast" style="display:none; color:green; font-weight:bold;">✅ Form Submitted Successfully!</p>
+
+      <style>
+        body { font-family: Arial; line-height: 1.8; }
+        .error { color: rgb(123, 7, 7); font-size: 14px; margin-left: 6px; }
+        fieldset { width: 250px; }
+      </style>
+    </main>
+    <script src="app.js" defer></script>
+  </body>
+</html>
